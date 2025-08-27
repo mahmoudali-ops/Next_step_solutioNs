@@ -1925,3 +1925,22 @@ section,
     margin: 0;
     font-size: 0.95rem;
 }
+
+
+.nav-select {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 15px;
+    color: #333;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+    .nav-select:hover,
+    .nav-select:focus {
+        border-color: #6610f2;
+        box-shadow: 0 0 6px rgba(102, 16, 242, 0.3);
+        outline: none;
+    }

@@ -46,34 +46,36 @@
                 <!-- Uncomment the line below if you also wish to use text logo -->
                 <!-- <h1 class="sitename">NewBiz</h1>  -->
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="#hero" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li class="dropdown">
-                        <a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li data-filter="*" class="filter-active"><a href="#services">All</a></li>
-                            <li data-filter=".filter-social"><a href="#">Social Media</a></li>
-                            <li data-filter=".filter-ads"><a href="#">Paid ADS</a></li>
-                            <li data-filter=".filter-site"><a href="#">Website Creation</a></li>
-                            <li data-filter=".filter-seo"><a href="#">SEO Development</a></li>
-                            <li data-filter=".filter-brand"><a href="#">Branding</a></li>
-                            <li data-filter=".filter-content"><a href="#">Content Marketing</a></li>
-                            <li data-filter=".filter-email"><a href="#">Email Marketing</a></li>
-                            <li data-filter=".filter-promo"><a href="#">Promo Shots</a></li>
+                        <a href="#services"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul class="services-dropdown">
+                            <li>
+                                <select id="services-select" class="form-select nav-select">
+                                    <option value="filter-social">Social Media</option>
+                                    <option value="filter-ads">Paid Ads</option>
+                                    <option value="filter-site">Website</option>
+                                    <option value="filter-seo">SEO</option>
+                                    <option value="filter-brand">Branding</option>
+                                    <option value="filter-content">Content Marketing</option>
+                                    <option value="filter-email">Email Marketing</option>
+                                    <option value="filter-promo">Promo Shots</option>
+                                    <option value="*">All</option>
+                                </select>
+                            </li>
                         </ul>
                     </li>
-
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
-
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
+
+
 
         </div>
     </header>
@@ -146,9 +148,7 @@
                            class="btn btn-outline-primary rounded-pill px-4">
                             <i class="bi bi-play-circle me-1"></i> Watch on Facebook
                         </a>
-                        <button class="btn btn-outline-secondary rounded-pill px-4">
-                            <i class="bi bi-share me-1"></i> Share
-                        </button>
+
                     </div>
                 </div>
 
@@ -288,158 +288,86 @@
             <div class="container">
                 <div class="row gy-4">
 
-                    <!-- Digital Marketing -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-bullseye" style="color:#6610f2;"></i></div>
-                            <h3>Digital Marketing</h3>
-                            <p>Tailored campaigns to boost visibility, reach your audience, and achieve measurable results.</p>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Management -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-share" style="color:#0dcaf0;"></i></div>
-                            <h3>Social Media Management</h3>
-                            <p>Scheduling, posting, and engaging with followers to keep your pages impactful.</p>
-                        </div>
-                    </div>
-
                     <!-- Social Media Page Creation -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-person-badge" style="color:#20c997;"></i></div>
-                            <h3>Social Media Page Creation</h3>
-                            <p>Professional setup of pages that reflect your brand identity and attract the right audience.</p>
-                        </div>
-                    </div>
-
-                    <!-- Branding Development -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-palette" style="color:#fd7e14;"></i></div>
-                            <h3>Branding Development</h3>
-                            <p>Defining your brand’s voice, look, and personality to stand out in the market.</p>
-                        </div>
+                    <!-- Social Media Page Creation -->
+                    <!-- هنا الخدمات -->
+                    <div class="col-lg-4 col-md-6 service-item filter-social" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-person-badge" style="color:#20c997;"></i></div>
+                        <h3>Social Media Page Creation</h3>
+                        <p>Professional setup of pages that reflect your brand identity and attract the right audience.</p>
                     </div>
 
                     <!-- Visual Identity Creation -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-brush" style="color:#df1529;"></i></div>
-                            <h3>Visual Identity</h3>
-                            <p>Logos, colors, and guidelines to build a strong and consistent visual identity.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-brand" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-brush" style="color:#df1529;"></i></div>
+                        <h3>Visual Identity</h3>
+                        <p>Logos, colors, and guidelines to build a strong and consistent visual identity.</p>
                     </div>
 
                     <!-- Social Media Designs -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-image" style="color:#f3268c;"></i></div>
-                            <h3>Social Media Designs</h3>
-                            <p>Creative visuals optimized for each platform to increase engagement.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-social" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-image" style="color:#f3268c;"></i></div>
+                        <h3>Social Media Designs</h3>
+                        <p>Creative visuals optimized for each platform to increase engagement.</p>
                     </div>
 
                     <!-- Content Writing -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-pencil-square" style="color:#198754;"></i></div>
-                            <h3>Content Writing</h3>
-                            <p>Engaging content for posts, blogs, and campaigns tailored to your audience.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-content" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-pencil-square" style="color:#198754;"></i></div>
+                        <h3>Content Writing</h3>
+                        <p>Engaging content for posts, blogs, and campaigns tailored to your audience.</p>
                     </div>
 
                     <!-- Marketing Plan -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-journal-check" style="color:#0dcaf0;"></i></div>
-                            <h3>Marketing Plan</h3>
-                            <p>A complete roadmap with goals, audience, and strategies for maximum impact.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-ads" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-journal-check" style="color:#0dcaf0;"></i></div>
+                        <h3>Marketing Plan</h3>
+                        <p>A complete roadmap with goals, audience, and strategies for maximum impact.</p>
                     </div>
 
                     <!-- Marketing Strategy -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-lightbulb" style="color:#20c997;"></i></div>
-                            <h3>Marketing Strategy</h3>
-                            <p>Long-term strategies based on research and positioning to grow your brand.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-ads" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-lightbulb" style="color:#20c997;"></i></div>
+                        <h3>Marketing Strategy</h3>
+                        <p>Long-term strategies based on research and positioning to grow your brand.</p>
                     </div>
 
                     <!-- Paid Ads -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-megaphone" style="color:#fd7e14;"></i></div>
-                            <h3>Paid Ads Management</h3>
-                            <p>Effective ad campaigns on Facebook, Instagram, and Google to maximize ROI.</p>
-                        </div>
-                    </div>
-
-                    <!-- Promo Video -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1100">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-camera-reels" style="color:#6610f2;"></i></div>
-                            <h3>Promo Video Production</h3>
-                            <p>Professional videos that highlight your brand, services, or events.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-ads" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-megaphone" style="color:#fd7e14;"></i></div>
+                        <h3>Paid Ads Management</h3>
+                        <p>Effective ad campaigns on Facebook, Instagram, and Google to maximize ROI.</p>
                     </div>
 
                     <!-- Product Photography -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1200">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-camera" style="color:#df1529;"></i></div>
-                            <h3>Product Photography</h3>
-                            <p>High-quality photography that showcases products to attract customers.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-promo" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-camera" style="color:#df1529;"></i></div>
+                        <h3>Product Photography</h3>
+                        <p>High-quality photography that showcases products to attract customers.</p>
                     </div>
 
                     <!-- Review Video -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1300">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-play-btn" style="color:#20c997;"></i></div>
-                            <h3>Review Video Production</h3>
-                            <p>Authentic videos that build trust and influence customer decisions.</p>
-                        </div>
-                    </div>
-
-                    <!-- Website Development -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1400">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-code-slash" style="color:#0dcaf0;"></i></div>
-                            <h3>Website Development</h3>
-                            <p>Responsive, SEO-friendly websites with modern design and functionality.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-promo" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-play-btn" style="color:#20c997;"></i></div>
+                        <h3>Review Video Production</h3>
+                        <p>Authentic videos that build trust and influence customer decisions.</p>
                     </div>
 
                     <!-- E-Commerce -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1500">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-cart" style="color:#fd7e14;"></i></div>
-                            <h3>E-Commerce Store Design</h3>
-                            <p>Custom online shops with secure payment and smooth navigation.</p>
-                        </div>
-                    </div>
-
-                    <!-- SEO -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1600">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-graph-up-arrow" style="color:#198754;"></i></div>
-                            <h3>SEO Optimization</h3>
-                            <p>Boost your ranking and visibility on Google with tailored SEO strategies.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-site" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-cart" style="color:#fd7e14;"></i></div>
+                        <h3>E-Commerce Store Design</h3>
+                        <p>Custom online shops with secure payment and smooth navigation.</p>
                     </div>
 
                     <!-- SME Support -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1700">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-people" style="color:#f3268c;"></i></div>
-                            <h3>SME Support</h3>
-                            <p>Affordable marketing solutions designed for small and medium businesses.</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 service-item filter-ads" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-people" style="color:#f3268c;"></i></div>
+                        <h3>SME Support</h3>
+                        <p>Affordable marketing solutions designed for small and medium businesses.</p>
                     </div>
+
+
 
                 </div>
             </div>
