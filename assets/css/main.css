@@ -2226,24 +2226,23 @@ section,
   }
   
 
-
-  /* Scroll to top */
+/* Scroll to top */
 #scroll-top {
     position: fixed;
-    right: 20px;
+    right: 15px;
     bottom: 80px;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #0d6efd;
     color: #fff;
-    font-size: 24px;
-    display: none; /* هيبان بالـ JS */
+    font-size: 26px;
+    display: none; /* هيتفعل بالـ JS */
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 9999;
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 999999;  /* أعلى أولوية */
+    cursor: pointer;
   }
   #scroll-top:hover {
     background: #0b5ed7;
@@ -2252,23 +2251,22 @@ section,
   /* WhatsApp Button */
   #whatsapp-contact {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 55px;
-    height: 55px;
+    right: 15px;
+    bottom: 15px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #25d366;
     color: #fff;
-    font-size: 26px;
+    font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 9999;
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 999999;  /* أعلى أولوية */
+    cursor: pointer;
   }
   #whatsapp-contact:hover {
     background: #1ebe5b;
   }
-  
   
