@@ -275,5 +275,37 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
-  
+  // زر فتح/غلق المنيو
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const navMenu = document.querySelector('.navmenu');
+
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  navToggle.classList.toggle('active');
+});
+
+// عند الضغط على أي لينك
+document.querySelectorAll('.navmenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    // شيل الـ active من باقي اللينكات
+    document.querySelectorAll('.navmenu a').forEach(l => l.classList.remove('active-link'));
+    // ضيفه على اللينك اللي اتضغط
+    link.classList.add('active-link');
+
+    // لو اللينك مش dropdown → قفل المنيو
+    if (!link.closest('.dropdown')) {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+    }
+  });
+});
+
+// dropdown toggle
+document.querySelectorAll('.navmenu .dropdown > a').forEach(drop => {
+  drop.addEventListener('click', (e) => {
+    e.preventDefault(); // منع الانتقال
+    drop.parentElement.classList.toggle('open');
+  });
+});
+
   
