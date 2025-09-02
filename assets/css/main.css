@@ -2235,4 +2235,29 @@ section,
   #whatsapp-contact:hover {
     background: #1ebe5b;
   }
+
+
+  /* Style for dropdown in mobile */
+@media (max-width: 991px) {
+    .navmenu .dropdown > a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .navmenu .dropdown ul {
+      display: none;
+      flex-direction: column;
+      padding-left: 15px;
+      margin-top: 8px;
+      border-left: 2px solid #eee;
+      transition: all 0.3s ease;
+    }
+  
+    .navmenu .dropdown.open ul {
+      display: flex;
+    }
+  }
+  
   

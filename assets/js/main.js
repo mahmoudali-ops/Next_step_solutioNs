@@ -308,4 +308,32 @@ document.querySelectorAll('.navmenu .dropdown > a').forEach(drop => {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll(".navmenu .dropdown > a");
+  
+    dropdowns.forEach(drop => {
+      drop.addEventListener("click", e => {
+        e.preventDefault(); // prevent navigation
+        const parent = drop.parentElement;
+  
+        // Close other dropdowns
+        document.querySelectorAll(".navmenu .dropdown").forEach(d => {
+          if (d !== parent) d.classList.remove("open");
+        });
+  
+        // Toggle current one
+        parent.classList.toggle("open");
+      });
+    });
+  
+    // Mobile nav toggle
+    const mobileToggle = document.querySelector(".mobile-nav-toggle");
+    const navmenu = document.querySelector("#navmenu");
+  
+    mobileToggle.addEventListener("click", () => {
+      navmenu.classList.toggle("active");
+    });
+  });
+
   
