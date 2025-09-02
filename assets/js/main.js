@@ -241,3 +241,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const toggleBtn = document.querySelector('.mobile-nav-toggle');
+const navMenu = document.querySelector('.navmenu ul');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+  toggleBtn.classList.toggle('bi-x'); // يخلي الأيقونة تتغير من ☰ لـ X
+  toggleBtn.classList.toggle('bi-list');
+});
+
+
