@@ -257,11 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-  
   document.addEventListener("DOMContentLoaded", function () {
     const scrollTopBtn = document.getElementById("scroll-top");
   
-    // إظهار/إخفاء زرار Scroll
+    // إظهار/إخفاء Scroll to top
     window.addEventListener("scroll", function () {
       if (window.scrollY > 200) {
         scrollTopBtn.style.display = "flex";
@@ -270,13 +269,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   
-    // حركة الـ Scroll لأعلى
+    // حركة الرجوع لفوق
     scrollTopBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
   
