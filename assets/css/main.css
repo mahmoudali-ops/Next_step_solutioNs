@@ -2260,4 +2260,43 @@ section,
     }
   }
   
+
+
+  /* Small card for designs */
+.design-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .design-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+  
+  .design-img {
+    height: 180px;         /* smaller size */
+    object-fit: cover;     /* keep ratio */
+    transition: transform 0.4s ease;
+  }
+  
+  .design-card:hover .design-img {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay on hover */
+  .design-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .design-card:hover .design-overlay {
+    opacity: 1;
+  }
+  
   

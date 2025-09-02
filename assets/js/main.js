@@ -336,4 +336,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+  function showImage(src) {
+    document.getElementById("modalImage").src = src;
+  }
+
+  const gallery = document.getElementById("design-gallery");
+
+  for (let i = 3; i <= 39; i++) {
+    gallery.innerHTML += `
+      <div class="col-6 col-md-4 col-lg-3 mb-4">
+        <div class="card design-card shadow-sm border-0 rounded-3 overflow-hidden position-relative">
+          <a href="assets/img/design/d${i}.jpg" class="glightbox" data-gallery="design-gallery">
+            <img src="assets/img/design/d${i}.jpg" class="card-img design-img" alt="Design Example ${i}">
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  // تفعيل Glightbox
+  const lightbox = GLightbox({
+    selector: '.glightbox'
+  });
