@@ -241,13 +241,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const toggleBtn = document.querySelector('.mobile-nav-toggle');
-const navMenu = document.querySelector('.navmenu ul');
-
-toggleBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-  toggleBtn.classList.toggle('bi-x'); // يخلي الأيقونة تتغير من ☰ لـ X
-  toggleBtn.classList.toggle('bi-list');
-});
 
 
+
+// فتح وقفل المنيو في الموبايل
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+    const navMenu = document.querySelector("#navmenu");
+  
+    if (mobileNavToggle && navMenu) {
+      mobileNavToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+        this.classList.toggle("bi-x");
+        this.classList.toggle("bi-list");
+      });
+    }
+  });
+  
+  
