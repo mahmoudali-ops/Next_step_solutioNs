@@ -258,4 +258,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollTopBtn = document.getElementById("scroll-top");
+  
+    // إظهار/إخفاء زرار Scroll
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = "flex";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+  
+    // حركة الـ Scroll لأعلى
+    scrollTopBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  });
+  
   
