@@ -2648,4 +2648,21 @@ html, body {
   }
   
   
+  @media (max-width: 767px) {
+    .portfolio .row.isotope-container {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+      gap: 10px; /* مسافة صغيرة بين العناصر */
+    }
+  
+    .portfolio .portfolio-item {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+  
+    .portfolio .portfolio-content img {
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
   
