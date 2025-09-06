@@ -2298,5 +2298,53 @@ section,
   .design-card:hover .design-overlay {
     opacity: 1;
   }
+
+  #navmenu ul li {
+    margin-left: 20px; /* يخلي مسافة بين كل تاب والتانية */
+  }
+  #navmenu ul li:first-child {
+    margin-left: 0; /* عشان أول عنصر ما يبقاش في مسافة زيادة */
+  }
+  .d-flex.gap-3 {
+    margin-top: 40px; /* زود الرقم حسب ما تحب */
+  }
+
+
+
   
+  /* Footer mobile optimization */
+@media (max-width: 767px) {
+    #footer {
+      padding: 20px 0 !important;   /* يقلل المسافة العلوية والسفلية */
+      font-size: 14px;              /* يصغر حجم النص */
+    }
+  
+    #footer .footer-top {
+      padding: 15px 0 !important;
+    }
+  
+    #footer .footer-contact p {
+      margin: 3px 0;               /* يقلل المسافة بين السطور */
+      font-size: 13px;
+    }
+  
+    #footer h4 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+  
+    #footer ul li {
+      margin-bottom: 4px;          /* يقلل المسافة بين اللينكات */
+    }
+  
+    #footer .social-links a {
+      font-size: 16px;             /* يصغر الأيقونات */
+      margin-right: 8px;
+    }
+  
+    #footer .copyright {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
   
