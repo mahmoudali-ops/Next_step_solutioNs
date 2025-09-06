@@ -1,257 +1,3 @@
-/**
-* Template Name: NewBiz
-* Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
-:root {
-    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --heading-font: "Raleway", sans-serif;
-    --nav-font: "Poppins", sans-serif;
-}
-
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-    --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-    --heading-color: #283d50; /* Color for headings, subheadings and title throughout the website */
-    --accent-color: #007bff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-    --nav-color: #024286; /* The default color of the main navmenu links */
-    --nav-hover-color: #007bff; /* Applied to main navmenu links when they are hovered over or active */
-    --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-    --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-    --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-    --nav-dropdown-hover-color: #007bff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-    --background-color: #ecf5ff;
-    --surface-color: #ffffff;
-}
-
-.dark-background {
-    --background-color: #1742a4;
-    --default-color: #ffffff;
-    --heading-color: #ffffff;
-    --surface-color: #0d358f;
-    --contrast-color: #ffffff;
-}
-
-/* Smooth scroll */
-:root {
-    scroll-behavior: smooth;
-}
-
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
-body {
-    color: var(--default-color);
-    background-color: var(--background-color);
-    font-family: var(--default-font);
-}
-
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-    a:hover {
-        color: color-mix(in srgb, var(--accent-color), transparent 25%);
-        text-decoration: none;
-    }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--heading-color);
-    font-family: var(--heading-font);
-}
-
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-    display: none;
-    background: #df1529;
-    color: #ffffff;
-    text-align: left;
-    padding: 15px;
-    margin-bottom: 24px;
-    font-weight: 600;
-}
-
-.php-email-form .sent-message {
-    display: none;
-    color: #ffffff;
-    background: #059652;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 24px;
-    font-weight: 600;
-}
-
-
-/* Pulsating Play Button
-------------------------------*/
-.pulsating-play-btn {
-    width: 94px;
-    height: 94px;
-    background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
-    border-radius: 50%;
-    display: block;
-    position: relative;
-    overflow: hidden;
-}
-
-    .pulsating-play-btn:before {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        animation-delay: 0s;
-        animation: pulsate-play-btn 2s;
-        animation-direction: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: steps;
-        opacity: 1;
-        border-radius: 50%;
-        border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
-        top: -15%;
-        left: -15%;
-        background: rgba(198, 16, 0, 0);
-    }
-
-    .pulsating-play-btn:after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 100;
-        transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .pulsating-play-btn:hover:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-40%) translateY(-50%);
-        width: 0;
-        height: 0;
-        border: none;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid #fff;
-        z-index: 200;
-        animation: none;
-        border-radius: 0;
-    }
-
-    .pulsating-play-btn:hover:after {
-        border-left: 15px solid var(--accent-color);
-        transform: scale(20);
-    }
-
-@keyframes pulsate-play-btn {
-    0% {
-        transform: scale(0.6, 0.6);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        opacity: 0;
-    }
-}
-
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
-.header, #header {
-    color: var(--default-color) !important;
-    background-color: var(--background-color) !important;
-    padding: 18px 0;
-    transition: all 0.35s ease-in-out;
-    z-index: 997;
-    position: relative !important;
-    width: 100% !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    min-height: 70px !important;
-    /* تحسين الشكل */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.header .container-fluid, #header .container-fluid {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 70px !important;
-}
-
-.header .container-fluid .logo, #header .container-fluid .logo {
-    flex-shrink: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.header .container-fluid .navmenu, #header .container-fluid .navmenu {
-    flex-shrink: 0 !important;
-}
-
-.header .container-fluid .mobile-nav-toggle, #header .container-fluid .mobile-nav-toggle {
-    flex-shrink: 0 !important;
-}
-
-/* تم دمج هذه القواعد في القواعد الأساسية أعلاه */
-
-/* تم دمج قواعد الـ navmenu في القواعد الأساسية */
-
-/* تم دمج قواعد الـ logo في القواعد الأساسية */
-
-/* تم حذف القواعد المكررة */
-
-/* تم حذف القواعد المكررة */
-
-/* تم حذف القواعد المكررة */
-
-/* تم حذف القواعد المكررة */
-
-/* تم حذف القواعد المكررة */
-
-/* تم حذف القواعد المكررة */
-
 .scrolled .header, .scrolled #header {
     box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
@@ -262,14 +8,7 @@ h6 {
 /* Navmenu - Base Styles */
 .navmenu {
     padding: 0;
-    display: none;
-}
-
-/* إخفاء القائمة في الموبايل افتراضياً */
-@media (max-width: 1199px) {
-    .navmenu {
-        display: none !important;
-    }
+    display: block;
 }
 
     .navmenu ul {
@@ -323,7 +62,7 @@ h6 {
 @media (min-width: 1200px) {
     .navmenu {
         padding: 0;
-        display: block !important;
+        display: block;
     }
     
     .navmenu ul {
@@ -863,7 +602,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
     width: 100%;
-    min-height: 80vh;
+    min-height: 90vh;
     position: relative;
     padding: 120px 0;
     display: flex;
@@ -2104,11 +1843,6 @@ section,
 
 /* موبايل */
 @media (max-width: 991px) {
-    /* إخفاء القائمة افتراضياً */
-    .navmenu {
-      display: none !important;
-    }
-    
     /* الزر */
     .mobile-nav-toggle {
       display: block;
@@ -2133,7 +1867,7 @@ section,
       height: calc(100vh - 70px);
       background: #fff;
       padding: 24px 20px;
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 16px;
       overflow-y: auto;
@@ -2144,7 +1878,6 @@ section,
   
     .navmenu.active {
       right: 0;
-      display: flex !important;
     }
   
     /* العناصر */
@@ -2377,7 +2110,19 @@ html, body {
   }
   
 
-/* تم حذف القواعد المكررة */
+/* ========== Menu ========== */
+.navmenu {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navmenu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
   
   /* ========== Modern Buttons ========== */
   .btn-modern {
@@ -2659,97 +2404,3 @@ html, body {
     }
   }
   
-/* ====== Modern Buttons Small & Centered ====== */
-.d-flex.gap-3 {
-    justify-content: center;   /* يخليهم في النص */
-    gap: 12px;                 /* مسافة معقولة */
-    flex-wrap: wrap;           /* ينزلوا تحت بعض في الموبايل */
-}
-
-.btn-modern {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 8px 18px;          /* أصغر */
-    font-size: 14px;
-    border-radius: 30px;
-    font-weight: 500;
-    border: none;
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    text-decoration: none;
-}
-
-.btn-modern i {
-    font-size: 16px;
-}
-
-/* Hover Effect */
-.btn-modern:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
-}
-
-/* Facebook */
-.btn-facebook {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-}
-
-/* WhatsApp / Call */
-.btn-facebookk {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-}
-
-/* Mobile - Make them smaller */
-@media (max-width: 767px) {
-    .btn-modern {
-        padding: 6px 14px;
-        font-size: 13px;
-    }
-
-    .btn-modern span {
-        display: none; /* نخلي الايقونة بس للموبايل */
-    }
-}
-
-
-/* ====== Footer Responsive ====== */
-@media (max-width: 767px) {
-    #footer {
-      text-align: center;
-    }
-  
-    #footer .footer-about,
-    #footer .footer-links {
-      text-align: center;
-    }
-  
-    #footer .footer-contact p {
-      margin: 5px 0;
-    }
-  
-    #footer .social-links {
-      justify-content: center;
-    }
-  
-    #footer .footer-links ul {
-      padding: 0;
-    }
-  
-    #footer .footer-links ul li {
-      display: inline-block;
-      margin: 5px 10px;
-    }
-  }
-  
-
-  #header .navmenu li {
-  margin: 0 16px; /* مسافة بين التابات */
-}
-
-
-
-

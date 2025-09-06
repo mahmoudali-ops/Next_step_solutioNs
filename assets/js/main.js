@@ -214,34 +214,76 @@ document.addEventListener("DOMContentLoaded", function () {
   const navToggle = document.querySelector('.mobile-nav-toggle');
   const navMenu = document.querySelector('.navmenu');
 
-  // فتح/قفل المنيو
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('bi-x');
-    navToggle.classList.toggle('bi-list');
-  });
+  console.log('Mobile menu elements:', { navToggle, navMenu });
 
-  // عند الضغط على أي لينك → يقفل المنيو (لو مش dropdown)
-  document.querySelectorAll('.navmenu a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelectorAll('.navmenu a').forEach(l => l.classList.remove('active-link'));
-      link.classList.add('active-link');
+  if (navToggle && navMenu) {
+    // فتح/قفل المنيو
+    navToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Toggle clicked, current state:', navMenu.classList.contains('active'));
+      
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      
+      // تغيير الأيقونة
+      if (navMenu.classList.contains('active')) {
+        navToggle.classList.remove('bi-list');
+        navToggle.classList.add('bi-x');
+        console.log('Menu opened');
+      } else {
+        navToggle.classList.remove('bi-x');
+        navToggle.classList.add('bi-list');
+        console.log('Menu closed');
+      }
+    });
+  } else {
+    console.error('Mobile menu elements not found!');
+  }
 
-      if (!link.closest('.dropdown')) {
+  if (navToggle && navMenu) {
+    // عند الضغط على أي لينك → يقفل المنيو (لو مش dropdown)
+    document.querySelectorAll('.navmenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.navmenu a').forEach(l => l.classList.remove('active-link'));
+        link.classList.add('active-link');
+
+        if (!link.closest('.dropdown')) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          navToggle.classList.remove('bi-x');
+          navToggle.classList.add('bi-list');
+        }
+      });
+    });
+
+    // فتح/قفل الـ dropdown
+    document.querySelectorAll('.navmenu .dropdown > a').forEach(drop => {
+      drop.addEventListener('click', (e) => {
+        e.preventDefault();
+        drop.parentElement.classList.toggle('open');
+      });
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
         navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
         navToggle.classList.remove('bi-x');
         navToggle.classList.add('bi-list');
       }
     });
-  });
 
-  // فتح/قفل الـ dropdown
-  document.querySelectorAll('.navmenu .dropdown > a').forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      e.preventDefault();
-      drop.parentElement.classList.toggle('open');
+    // إغلاق القائمة عند تغيير حجم الشاشة
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1200) {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        navToggle.classList.remove('bi-x');
+        navToggle.classList.add('bi-list');
+      }
     });
-  });
+  }
 });
 
 /* -----------------------------
@@ -267,3 +309,5 @@ if (gallery) {
 
   GLightbox({ selector: '.glightbox' });
 }
+
+
