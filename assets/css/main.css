@@ -2380,4 +2380,146 @@ html, body {
   .navmenu.active {
     display: block;
   }
+
+  /* الزرار الافتراضي (كمبيوتر / شاشات كبيرة) */
+.btn-modern {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  /* زرار في الموبايل */
+  @media (max-width: 767px) {
+    .btn-modern {
+      padding: 8px 16px;   /* أصغر */
+      font-size: 14px;     /* خط أصغر */
+    }
+  
+    .btn-modern span {
+      display: none; /* نخفي النص ونخلي الايقونة بس لو حابب */
+    }
+  
+    .d-flex.gap-3 {
+      gap: 0.5rem; /* مسافة أصغر بين الزراير */
+      flex-wrap: wrap; /* الزراير تنزل تحت بعض لو مش لاقية مساحة */
+      justify-content: center;
+    }
+  }
+
+
+
+  /* الحجم الافتراضي (للكمبيوتر / شاشات كبيرة) */
+.service-item {
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .service-item h3 {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  
+  .service-item p {
+    font-size: 15px;
+  }
+  
+  .service-item .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  /* لما يفتح من الموبايل */
+  @media (max-width: 767px) {
+    .service-item {
+      padding: 15px;       /* أصغر */
+      margin: 0 auto;      /* توسيط */
+    }
+  
+    .service-item h3 {
+      font-size: 16px;     /* أصغر */
+    }
+  
+    .service-item p {
+      font-size: 13px;     /* نص أصغر */
+    }
+  
+    .service-item .icon {
+      font-size: 28px;     /* أيقونة أصغر */
+    }
+  
+    #services .row {
+      gap: 10px;           /* مسافة أصغر بين الكروت */
+    }
+  }
+  
+
+  /* الوضع العادي - كمبيوتر */
+.stats-item span {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .stats-item p {
+    font-size: 15px;
+    color: #ddd;
+  }
+  
+  .stats-item p strong {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  /* الموبايل */
+  @media (max-width: 767px) {
+    .stats-item {
+      padding: 10px 5px;
+    }
+  
+    .stats-item span {
+      font-size: 24px;   /* الرقم أصغر */
+    }
+  
+    .stats-item p {
+      font-size: 13px;   /* الوصف أصغر */
+    }
+  
+    .stats-item p strong {
+      font-size: 14px;
+    }
+  
+    #stats .row {
+      gap: 10px;         /* يقلل المسافات بين البوكسات */
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    #footer .footer-about p {
+      font-size: 13px;
+      margin: 2px 0;
+    }
+    #footer h4 {
+      font-size: 15px;
+    }
+    #footer ul li a {
+      font-size: 13px;
+    }
+  }
+  
+
+
+  @media (max-width: 576px) {
+    #footer .social-links a {
+      font-size: 16px;
+      margin-right: 8px;
+    }
+  }
+  
+  
+  
   
