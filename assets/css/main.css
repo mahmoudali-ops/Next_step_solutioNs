@@ -2371,4 +2371,13 @@ html, body {
     }
   }
   
+  /* الحالة الافتراضية للمنيو على الموبايل */
+.navmenu {
+    display: none; /* مخفية */
+  }
+  
+  /* لما يكون عليها active */
+  .navmenu.active {
+    display: block;
+  }
   
