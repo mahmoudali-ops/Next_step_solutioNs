@@ -2347,4 +2347,28 @@ section,
       font-size: 12px;
     }
   }
+
+  /* خلي كل الصفحة تاخد العرض بالظبط */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* تعديل الـ container */
+  .container, .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* المنيو في الموبايل يفتح صح من غير ما يزق الصفحة */
+  @media (max-width: 991px) {
+    .navmenu {
+      width: 100%;
+      right: 0;
+      left: 0;
+    }
+  }
+  
   
