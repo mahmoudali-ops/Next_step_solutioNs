@@ -2371,41 +2371,130 @@ html, body {
     }
   }
   
-  /* الحالة الافتراضية للمنيو على الموبايل */
+
+/* ========== Menu ========== */
 .navmenu {
-    display: none; /* مخفية */
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
   }
   
-  /* لما يكون عليها active */
   .navmenu.active {
     display: block;
-  }
-
-  /* الزرار الافتراضي (كمبيوتر / شاشات كبيرة) */
-.btn-modern {
-    padding: 12px 24px;
-    font-size: 16px;
+    opacity: 1;
+    transform: translateY(0);
   }
   
-  /* زرار في الموبايل */
+  /* ========== Modern Buttons ========== */
+  .btn-modern {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 40px;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    transition: all 0.35s ease;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* تأثير خلفية متحرك */
+  .btn-modern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-in-out;
+    z-index: -1;
+  }
+  
+  .btn-modern:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* لون افتراضي */
+  .btn-default {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+  }
+  
+  .btn-facebook {
+    background: linear-gradient(135deg, #1877f2, #3b5998);
+  }
+  
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+  }
+  
+  .btn-instagram {
+    background: linear-gradient(135deg, #feda75, #d62976, #962fbf, #4f5bd5);
+  }
+  
+  .btn-youtube {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+  }
+  
+  .btn-linkedin {
+    background: linear-gradient(135deg, #0077b5, #004182);
+  }
+  
+  /* Hover Elevation */
+  .btn-modern:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* ========== Responsive (Mobile) ========== */
   @media (max-width: 767px) {
     .btn-modern {
-      padding: 8px 16px;   /* أصغر */
-      font-size: 14px;     /* خط أصغر */
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 25px;
+      justify-content: center;
     }
   
     .btn-modern span {
-      display: none; /* نخفي النص ونخلي الايقونة بس لو حابب */
+      display: none; /* نخلي الأيقونة بس */
+    }
+  
+    /* Tooltip عند الضغط/المرور */
+    .btn-modern::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    .btn-modern:hover::after,
+    .btn-modern:focus::after {
+      opacity: 1;
     }
   
     .d-flex.gap-3 {
-      gap: 0.5rem; /* مسافة أصغر بين الزراير */
-      flex-wrap: wrap; /* الزراير تنزل تحت بعض لو مش لاقية مساحة */
+      gap: 0.5rem;
+      flex-wrap: wrap;
       justify-content: center;
     }
   }
-
-
+  
 
   /* الحجم الافتراضي (للكمبيوتر / شاشات كبيرة) */
 .service-item {
@@ -2520,6 +2609,43 @@ html, body {
     }
   }
   
+  @media (max-width: 576px) {
+    #features h3 {
+      font-size: 18px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+  
+    #features p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  
+    #features ul li {
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+  
+    #features ul li i {
+      font-size: 14px;
+      margin-right: 6px;
+    }
+  
+    #features img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  
+    #features .features-item {
+      flex-direction: column; /* الصورة فوق والنص تحت */
+      text-align: center;     /* توسيط النصوص */
+    }
+  
+    #features .features-item ul {
+      padding-left: 0; /* نشيل المسافات الزيادة */
+      list-style: none;
+    }
+  }
   
   
   
