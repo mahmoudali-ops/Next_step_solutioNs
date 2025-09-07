@@ -2844,23 +2844,10 @@ html, body {
 
 
 
-  .service-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-  }
   
-  .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  #heroCarousel .carousel-item img {
+    width: 100%;
+    height: 100vh; /* يخليها قد ارتفاع الشاشة */
+    object-fit: cover; /* يملأ بدون فراغات */
   }
-  
-  .service-item .icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-  
   
