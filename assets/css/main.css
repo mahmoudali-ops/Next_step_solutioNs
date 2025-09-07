@@ -856,99 +856,89 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-    width: 100%;
-    min-height: 85vh;
+#hero {
     position: relative;
-    padding: 120px 0;
-    display: flex;
-    align-items: center;
-    background: url(../img/company.jpg) center bottom no-repeat;
-    background-size: cover;
-}
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
 
-@media (max-width: 1200px) {
-    .hero {
-        padding: 60px 0;
-    }
-}
+  }
+  
+  /* Images full cover */
+  #hero .carousel-inner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Overlay Layer (light) */
+  #hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* شفاف فاتح مش معتم */
+    z-index: 1;
+  }
+  
+  /* Content Styling */
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 20px;
 
-.hero h1 {
-    margin: 0;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
-}
-
-.hero p {
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
-    margin: 5px 0 30px 0;
-    font-size: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+    color: #fff;
+  }
+  
+  .hero-title {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-text {
+    font-size: 22px;
     font-weight: 400;
-}
-
-
-    .hero .btn-get-started:hover {
-        color: var(--contrast-color);
-        background: color-mix(in srgb, var(--accent-color), transparent 15%);
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Mobile Responsive */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #hero {
+      height: 70vh;           /* shorter hero on mobile */
+      min-height: 400px;
     }
-
-.hero .btn-watch-video {
-    font-size: 16px;
-    transition: 0.5s;
-    margin-left: 25px;
-    color: var(--default-color);
-    font-weight: 600;
-}
-
-    .hero .btn-watch-video i {
-        color: var(--accent-color);
-        font-size: 32px;
-        transition: 0.3s;
-        line-height: 0;
-        margin-right: 8px;
+  
+    .hero-title {
+      font-size: 28px;        /* smaller title */
+      line-height: 1.3;
+      margin-bottom: 10px;
     }
-
-    .hero .btn-watch-video:hover {
-        color: var(--accent-color);
+  
+    .hero-text {
+      font-size: 14px;        /* smaller subtitle */
+      line-height: 1.4;
     }
-
-        .hero .btn-watch-video:hover i {
-            color: color-mix(in srgb, var(--accent-color), transparent 15%);
-        }
-
-.hero .animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 640px) {
-    .hero h1 {
-        font-size: 28px;
-        line-height: 36px;
+  
+    .hero-content {
+      padding: 0 15px;        /* tighter spacing */
     }
-
-    .hero p {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 30px;
-    }
-
-    .hero .btn-get-started,
-    .hero .btn-watch-video {
-        font-size: 13px;
-    }
-}
-
-@keyframes up-down {
-    0% {
-        transform: translateY(10px);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
+  }
+  
+  
 
 /*--------------------------------------------------------------
 # About Section
@@ -2333,6 +2323,22 @@ section,
       margin-top: 10px;
       font-size: 12px;
     }
+
+    #footer .span {
+      font-size: 12px;
+    }
+    .footer-about {
+        text-align: center;   /* center text in the column */
+      }
+    
+      .footer-about .logo {
+        justify-content: center;  /* center flex content */
+      }
+    
+      .footer-about .sitename {
+        display: block;
+        margin: 0 auto;       /* ensure span is centered */
+      }
   }
 
   /* خلي كل الصفحة تاخد العرض بالظبط */

@@ -309,5 +309,3 @@ if (gallery) {
 
   GLightbox({ selector: '.glightbox' });
 }
-
-
