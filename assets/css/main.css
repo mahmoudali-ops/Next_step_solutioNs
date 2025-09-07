@@ -939,6 +939,13 @@ section,
   }
   
   
+#hero .carousel-inner img {
+    width: 100%;
+    height: 100vh;        /* يغطي الشاشة كلها */
+    object-fit: cover;     /* يضمن عدم وجود فراغات */
+    object-position: center;
+  }
+  
 
 /*--------------------------------------------------------------
 # About Section
@@ -2737,7 +2744,6 @@ html, body {
   #header .navmenu li {
   margin: 0 16px; /* مسافة بين التابات */
 }
-
 
 
 
