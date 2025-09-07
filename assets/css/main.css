@@ -2747,4 +2747,98 @@ html, body {
 }
 
 
-
+/* Banner Styling */
+.contact-banner {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+  .contact-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .contact-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+  .contact-banner .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Form small & centered */
+  .contact-form {
+    border: 1px solid #eee;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .contact-banner {
+      height: 180px;
+    }
+    .contact-banner .banner-text h2 {
+      font-size: 24px;
+    }
+    .contact-form {
+      padding: 20px;
+    }
+  }
+  
+/* Stats Section */
+.stats {
+    background: #1742a4; /* خلفية داكنة */
+    color: #fff;
+  }
+  
+  .stats .stats-item {
+    padding: 15px;
+  }
+  
+  .stats .purecounter {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff; /* الأرقام أبيض */
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .stats p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #fff; /* النص أبيض */
+  }
+  
+  .stats strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff; /* العناوين أبيض */
+    margin-bottom: 4px;
+  }
+  
+  .stats span {
+    font-size: 0.8rem;
+    color: #ccc; /* الوصف بلون أفتح */
+  }
+  
+  /* موبايل */
+  @media (max-width: 576px) {
+    .stats .purecounter {
+      font-size: 1.6rem;
+    }
+    .stats strong {
+      font-size: 0.9rem;
+    }
+    .stats span {
+      font-size: 0.75rem;
+    }
+  }
+  
