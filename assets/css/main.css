@@ -860,8 +860,8 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+    background: url("assets/img/company.jpg") center center / cover no-repeat;
     position: relative;
-    height: 100vh;
     overflow: hidden;
     margin-top: -50px;
 
@@ -2555,28 +2555,27 @@ html, body {
     margin-bottom: 5px;
   }
   
-  /* الموبايل */
-  @media (max-width: 767px) {
-    .stats-item {
-      padding: 10px 5px;
+  /* تصغير الإحصائيات في الموبايل */
+@media (max-width: 767px) {
+    #stats .stats-item span.purecounter {
+      font-size: 1.5rem;   /* حجم أصغر للأرقام */
     }
   
-    .stats-item span {
-      font-size: 24px;   /* الرقم أصغر */
+    #stats .stats-item p strong {
+      font-size: 0.9rem;   /* حجم أصغر للعناوين */
     }
   
-    .stats-item p {
-      font-size: 13px;   /* الوصف أصغر */
+    #stats .stats-item p span {
+      font-size: 0.75rem;  /* حجم أصغر للوصف */
+      display: block;      /* كل سطر لوحده */
+      margin-top: 2px;
     }
   
-    .stats-item p strong {
-      font-size: 14px;
-    }
-  
-    #stats .row {
-      gap: 10px;         /* يقلل المسافات بين البوكسات */
+    #stats .stats-item {
+      padding: 8px 0;      /* يقلل المسافات */
     }
   }
+  
 
 
   @media (max-width: 576px) {
