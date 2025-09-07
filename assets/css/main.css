@@ -864,16 +864,17 @@ section,
     position: relative;
     overflow: hidden;
     margin-top: -50px;
-
+    height: 100vh; /* خلي الـ hero كله نفس الطول */
   }
   
-  /* Images full cover */
-  #hero .carousel-inner img {
+  #hero .carousel-inner,
+  #hero .carousel-item,
+  #hero .carousel-item img {
+    height: 100vh; /* كلهم نفس الارتفاع */
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
+    object-fit: cover; /* عشان يمنع التكرار أو التمدد */
   }
+  
   
   /* Overlay Layer (light) */
   #hero::after {
