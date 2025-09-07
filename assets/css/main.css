@@ -2851,3 +2851,18 @@ html, body {
     object-fit: cover; /* يملأ بدون فراغات */
   }
   
+
+  /* 📱 للموبايل */
+@media (max-width: 768px) {
+    #heroCarousel .carousel-item img {
+      height: 100%;      /* خلي الصورة على قد الكاروسيل */
+      min-height: 100vh; /* تمنع الفراغ */
+      object-fit: cover; /* يملأ الشاشة */
+    }
+  }
+
+  #heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height: 100vh;
+}
