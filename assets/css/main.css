@@ -2866,3 +2866,16 @@ html, body {
 #heroCarousel .carousel-item {
   height: 100vh;
 }
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+  height: 100vh;       /* ملأ الشاشة */
+  width: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;   /* يملأ الشاشة بدون فراغ */
+  display: block;
+}
