@@ -706,33 +706,29 @@ body {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background-color);
     transition: all 0.6s ease-out;
-}
-
-    #preloader:before {
-        content: "";
-        position: fixed;
-        top: calc(50% - 30px);
-        left: calc(50% - 30px);
-        border: 6px solid var(--accent-color);
-        border-top-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: animate-preloader 1s linear infinite;
-    }
-
-@keyframes animate-preloader {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
+  }
+  
+  /* صورة اللوجو */
+  #preloader img {
+    width: 200px; /* حجم مبدئي */
+    height: auto;
+    opacity: 0;
+    transform: scale(1.5);
+    animation: zoomIn 1s ease-out forwards;
+  }
+  
+  /* Animation */
+  @keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1.9); }
+  }
+  
+  
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -2557,23 +2553,29 @@ html, body {
   }
   
   /* تصغير الإحصائيات في الموبايل */
-@media (max-width: 767px) {
+
+  @media (max-width: 767px) {
+    #stats .stats-item {
+      padding: 8px 0;
+      text-align: center;   /* يخلي الكلام في النص */
+    }
+  
     #stats .stats-item span.purecounter {
-      font-size: 1.5rem;   /* حجم أصغر للأرقام */
+      font-size: 1.5rem;
+      display: block;       /* يخلي الرقم في سطر لوحده */
+      margin: 0 auto;       /* يوسّطه */
     }
   
     #stats .stats-item p strong {
-      font-size: 0.9rem;   /* حجم أصغر للعناوين */
+      font-size: 0.9rem;
+      display: block;       /* يخلي العنوان تحت الرقم */
+      margin-top: 5px;
     }
   
     #stats .stats-item p span {
-      font-size: 0.75rem;  /* حجم أصغر للوصف */
-      display: block;      /* كل سطر لوحده */
+      font-size: 0.75rem;
+      display: block;       /* الوصف في سطر جديد */
       margin-top: 2px;
-    }
-  
-    #stats .stats-item {
-      padding: 8px 0;      /* يقلل المسافات */
     }
   }
   
